@@ -1,33 +1,25 @@
-  import 'dart:convert';
-  import 'dart:ffi';
-  class Post {
-    Post({
-      required this.id,
-      required this.title,
-      required this.body,
-      required this.base64Image,
-    });
-  
-    final int id; // Loại bỏ nullable nếu trường luôn required
-    final String title;
-    final String body;
-    final String base64Image;
-  
-    // Hàm chuyển đổi từ JSON sang đối tượng Post
-    factory Post.fromJson(Map<String, dynamic> json) {
-      return Post(
-        id: json["id"] ?? 0, // Giá trị mặc định nếu null
-        title: json["title"] ?? '',
-        body: json["body"] ?? '',
-        base64Image: json["base64Image"] ?? '',
-      );
-    }
-  
-    // Hàm chuyển đổi từ đối tượng Post thành JSON
-    Map<String, dynamic> toJson() => {
-          "id": id,
-          "title": title,
-          "body": body,
-          "base64Image": base64Image,
-        };
+{
+  "posts": [
+		{
+			"id": 1,
+			"title": "Cách nấu phở bò truyền thống",
+			"body": "Hướng dẫn chi tiết cách nấu phở bò truyền thống thơm ngon và đậm đà.",
+			"base64Image": ""
+		},
+		{
+			"id": 2,
+			"title": "Du lịch Đà Lạt",
+			"body": "Kinh nghiệm du lịch Đà Lạt tự túc: Những địa điểm nên đến và món ăn không thể bỏ qua.",
+			"base64Image": ""
+		},
+		{
+			"id": 3,
+			"title": "Hướng dẫn sử dụng Flutter",
+			"body": "Giới thiệu và hướng dẫn cơ bản về cách sử dụng Flutter để phát triển ứng dụng di động.",
+			"base64Image": ""
+		}
+	],
+  "profile": {
+    "name": "typicode"
   }
+}
